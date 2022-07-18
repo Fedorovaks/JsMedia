@@ -1,2 +1,1 @@
-console.log('Начало');
-alert('Начало');
+import './index.scss'

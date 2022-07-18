@@ -1,0 +1,12 @@
+{
+    "dress": [
+        {
+            "id": 1,
+            "image": "",
+            "name": "test",
+            "oldPrice": 1000,
+            "price": 900,
+            "sale": 100
+        }
+    ]
+}
