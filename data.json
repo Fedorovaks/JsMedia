@@ -2,6 +2,7 @@
     "dress": [
         {
             "id": 1,
+            "sku":123,
             "image": "",
             "name": "test",
             "oldPrice": 1000,
