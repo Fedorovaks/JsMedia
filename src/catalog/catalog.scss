@@ -1,9 +1,10 @@
 //стили каталога
 .products-view {
     display:flex;
-    justify-content: space-around;
-    width:70%;
+    flex-wrap: wrap;
+    width:75%;
     margin:auto;
+    padding-left: 50px;
     background: white;
     
 }

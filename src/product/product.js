@@ -1,7 +1,8 @@
 
 import './product.scss'
 
-const Product = (name, price) => {
+
+const Product = (name, image, sku, price, oldPrice, sale) => {
     const ProductsViewItem = document.createElement('div');
     ProductsViewItem.className = 'products-view-item';
 
@@ -9,13 +10,43 @@ const Product = (name, price) => {
    ProductName.className = 'name';
    ProductName.innerText = name
 
+   const ProductImg = document.createElement('img');
+   ProductImg.src = image
+
+   const ProductSku = document.createElement('div');
+   ProductSku.className = 'sku';
+   ProductSku.innerText = 'Артикул: ' + sku
+
+   const ProductVievPrice = document.createElement('div');
+   ProductVievPrice.className = 'products-view-price';
+
 
    const ProductPrice = document.createElement('div');
    ProductPrice.className = 'price';
    ProductPrice.innerText = price+' руб.'
 
+   const ProductOldPrice = document.createElement('div');
+   ProductOldPrice.className = 'oldPrice';
+   ProductOldPrice.innerText = oldPrice+' руб.'
+
+   const ProductBtn = document.createElement('a');
+   ProductBtn.className = 'products-view-buttons';
+   ProductBtn.innerText = 'Добавить'
+   ProductBtn.href="/product/"+ sku
+
+   const ProductSale = document.createElement('div')
+   ProductSale.className = 'sale';
+   ProductSale.innerText = sale
+
    ProductsViewItem.appendChild(ProductName)
-   ProductsViewItem.appendChild(ProductPrice)
+   ProductsViewItem.appendChild(ProductImg)
+   ProductsViewItem.appendChild(ProductSku)
+   ProductsViewItem.appendChild(ProductVievPrice)
+   ProductVievPrice.appendChild(ProductPrice)
+   ProductVievPrice.appendChild(ProductOldPrice)
+   ProductsViewItem.appendChild(ProductBtn)
+   ProductsViewItem.appendChild(ProductSale)
+  
 
 
     return ProductsViewItem
