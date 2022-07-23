@@ -23,11 +23,12 @@ const Product = (name, image, sku, price, oldPrice, sale) => {
 
    const ProductPrice = document.createElement('div');
    ProductPrice.className = 'price';
+   price = oldPrice * (100-sale)/100
    ProductPrice.innerText = price+' руб.'
 
    const ProductOldPrice = document.createElement('div');
    ProductOldPrice.className = 'oldPrice';
-   ProductOldPrice.innerText = oldPrice+' руб.'
+   ProductOldPrice.innerText = oldPrice + ' руб.'
 
    const ProductBtn = document.createElement('a');
    ProductBtn.className = 'products-view-buttons';
@@ -36,7 +37,12 @@ const Product = (name, image, sku, price, oldPrice, sale) => {
 
    const ProductSale = document.createElement('div')
    ProductSale.className = 'sale';
-   ProductSale.innerText = sale
+   ProductSale.innerText = sale + ' %'
+
+   
+   const Markers = document.createElement('img');
+   Markers.src = "/pictures/sale.png"
+   Markers.className = 'marker';
 
    ProductsViewItem.appendChild(ProductName)
    ProductsViewItem.appendChild(ProductImg)
@@ -45,6 +51,7 @@ const Product = (name, image, sku, price, oldPrice, sale) => {
    ProductVievPrice.appendChild(ProductPrice)
    ProductVievPrice.appendChild(ProductOldPrice)
    ProductsViewItem.appendChild(ProductBtn)
+   ProductsViewItem.appendChild(Markers)
    ProductsViewItem.appendChild(ProductSale)
   
 

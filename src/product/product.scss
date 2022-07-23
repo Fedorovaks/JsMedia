@@ -39,7 +39,9 @@ margin-top:20px;
 }
 
 .products-view-buttons {
-    display: inline-block;
+    display: flex;
+    margin: auto;
+    width: 60px;
     margin-top:40px;
     padding: 0.4125rem 1.625rem 0.4125rem 1.625rem;
     text-decoration: none;
@@ -72,11 +74,21 @@ margin-top:20px;
       background: #fff;
     }
   }
-// .marker {
-//   width:100px;
-//   height: auto;
-//   position: absolute;
-//   top: 0;
-//   left: 500px;
 
-// }
+  .sale {
+    position: relative;
+    bottom: 460px;
+    left: 140px;
+    font-weight: 200;
+    font-style: italic;
+}
+
+.marker {
+  width: 50px;
+  height: auto;
+  position: relative;
+  bottom: 425px;
+  left: 140px;
+  border-radius: 5px;
+
+}
