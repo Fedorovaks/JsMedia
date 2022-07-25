@@ -1,0 +1,47 @@
+//стили шапки 
+.site-head {
+    display:flex;
+    justify-content: space-between;
+    width:75%;
+    height:80px;
+    margin:auto;
+    margin-bottom: 15px;
+    padding-left: 50px;
+    background: white;
+    border:3px solid crimson;
+    
+}
+
+.cart-mini {
+    align-self: center;
+}
+
+.cart-mini-main {
+    display: flex;
+    color: black;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+.cart-mini-main:hover {
+    color:crimson;
+}
+
+.cart-mini-count {
+    position: relative;
+    right: 2px;
+    bottom:8px;
+    margin: auto;
+    padding:2px 6px;
+    border-radius: 50px;
+    font-size: 14px;
+    background: crimson;
+    color: white;
+    box-sizing: border-box;
+}
+
+.cart-mini-text {
+    padding-left:5px;
+    padding-right:20px;
+
+}

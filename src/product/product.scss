@@ -7,7 +7,7 @@
     width:300px;
 }
 
-img {
+.product-image{
     width:300px;
     height: 220px;
 }
@@ -91,4 +91,9 @@ margin-top:20px;
   left: 140px;
   border-radius: 5px;
 
+}
+.sale_none,
+.marker_none,
+.oldPrice_none {
+  display:none
 }
