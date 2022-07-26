@@ -2,6 +2,7 @@ import Header from './header'
 import Catalog from './catalog'
 import Product from './product'
 import Cart from './cart'
+import Basket from './basket'
 
 
 import './index.scss'
@@ -74,10 +75,11 @@ const mocks =[{
 
 let cart = [ ]
 
-const header = Header(cart);
+const header = Header();
 document.body.appendChild(header);
 
-const {CartCount, UpdateCartCount} = Cart(cart);
+const {CartMini, updateCart} = Cart(cart);
+header.appendChild(CartMini);
 
 const сatalog = Catalog();
 document.body.appendChild(сatalog);
@@ -86,9 +88,9 @@ const generateProducts = () => {
     mocks.forEach((item) => {
 
         const btnAdd = () => {
-            console.log(item.id);
+            console.log(item);
             cart.push(item)
-            UpdateCartCount(cart)
+            updateCart(cart);
         }
 
         const products = Product(item.name, item.image, item.sku, item.price, 
@@ -99,3 +101,4 @@ const generateProducts = () => {
 })
 }
 generateProducts();
+
