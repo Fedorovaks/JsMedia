@@ -2,7 +2,7 @@
 import './product.scss'
 
 
-const Product = (name, image, sku, price, oldPrice, sale, btnAdd) => {
+const Product = (name, image, sku, oldPrice, sale, btnAdd) => {
     const ProductsViewItem = document.createElement('div');
     ProductsViewItem.className = 'products-view-item';
     // ProductsViewItem.addEventListener('click');
@@ -25,7 +25,7 @@ const Product = (name, image, sku, price, oldPrice, sale, btnAdd) => {
 
    const ProductPrice = document.createElement('div');
    ProductPrice.className = 'price';
-   price = oldPrice * (100-sale)/100;
+   const price = oldPrice * (100-sale)/100;
    ProductPrice.innerText = price+' руб.';
 
    const ProductOldPrice = document.createElement('div');

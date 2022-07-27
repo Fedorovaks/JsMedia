@@ -4,7 +4,6 @@ import Product from './product'
 import Cart from './cart'
 import Basket from './basket'
 
-
 import './index.scss'
 
 const mocks =[{
@@ -78,7 +77,16 @@ let cart = [ ]
 const header = Header();
 document.body.appendChild(header);
 
-const {CartMini, updateCart} = Cart(cart);
+
+const btnCart = ()=>{
+    const popUp = document.querySelector('.pop-up-cart ')
+    popUp.classList.add("expand");
+}
+
+const {PopUpCart, updateCartProduct} = Basket();
+document.body.appendChild(PopUpCart); 
+
+const {CartMini, updateCart} = Cart(cart, btnCart);
 header.appendChild(CartMini);
 
 const сatalog = Catalog();
@@ -88,17 +96,27 @@ const generateProducts = () => {
     mocks.forEach((item) => {
 
         const btnAdd = () => {
-            console.log(item);
-            cart.push(item)
+            cart.push(item);
             updateCart(cart);
-        }
+            updateCartProduct(item);
+      
+            
+        } 
 
-        const products = Product(item.name, item.image, item.sku, item.price, 
-            item.oldPrice, item.sale, btnAdd);
+        
+
+        const products = Product(item.name, 
+            item.image, 
+            item.sku,  
+            item.oldPrice, 
+            item.sale, 
+            btnAdd);
             
         сatalog.appendChild(products)
+       
         
 })
 }
 generateProducts();
+
 
