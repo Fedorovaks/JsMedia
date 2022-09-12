@@ -11,6 +11,11 @@
     overflow: auto;
 }
 
+.content {
+    height:700px;
+    overflow: auto;
+}
+
 .expand {
     display: block;
 }
@@ -31,4 +36,26 @@
 
 h1 {
     padding-left: 10px;
+}
+
+.product-name-cart {
+    font-size: 20px;
+  
+    padding:10px 0px 0px 20px;
+    font-weight: 700;
+
+}
+
+.product-count-cart {
+   
+    padding:5px 20px;
+    font-size: 20px;
+    color:darkgray
+}
+
+.product-price-cart {
+ 
+    padding:5px 20px 10px;
+    font-size: 20px;
+    color:darkgray
 }

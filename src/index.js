@@ -12,7 +12,8 @@ const mocks =[{
         "image": "pictures/product/1.jpg",
         "name": "Панкейк",
         "oldPrice": 700,
-        "sale": 30
+        "sale": 30,
+        "count":1
     },
     {
         "id": 2,
@@ -20,7 +21,8 @@ const mocks =[{
         "image": "pictures/product/2.jpg",
         "name": "Шоколадный кекс",
         "oldPrice": 1000,
-        "sale": 10
+        "sale": 10,
+        "count":1
     },
     {
         "id": 3,
@@ -28,7 +30,8 @@ const mocks =[{
         "image": "pictures/product/3.jpg",
         "name": "Десерт «Красный бархат» ",
         "oldPrice": 1400,
-        "sale": 15
+        "sale": 15,
+        "count":1
     },
     {
         "id": 4,
@@ -36,7 +39,8 @@ const mocks =[{
         "image": "pictures/product/4.jpg",
         "name": "Десерт «Сырный»",
         "oldPrice": 1500,
-        "sale": 5
+        "sale": 5,
+        "count":1
     },
     {
         "id": 5,
@@ -44,7 +48,8 @@ const mocks =[{
         "image": "pictures/product/5.jpg",
         "name": "Макаруны",
         "oldPrice": 1100,
-        "sale": 7
+        "sale": 7,
+        "count":1
     },
     {
         "id": 6,
@@ -52,7 +57,8 @@ const mocks =[{
         "image": "pictures/product/6.jpg",
         "name": "Десерт «Рафаэлло»",
         "oldPrice": 1800,
-        "sale": 18
+        "sale": 18,
+        "count":1
     },
     {
         "id": 7,
@@ -60,7 +66,8 @@ const mocks =[{
         "image": "pictures/product/7.jpg",
         "name": "Десерт фруктовый",
         "oldPrice": 800,
-        "sale": 5
+        "sale": 5,
+        "count":1
     },
     {
         "id": 8,
@@ -68,7 +75,8 @@ const mocks =[{
         "image": "pictures/product/8.jpg",
         "name": "Круасан «Миндальный»",
         "oldPrice": 200,
-        "sale": 0
+        "sale": 0,
+        "count":1
     }
     ]
 
@@ -93,30 +101,38 @@ const сatalog = Catalog();
 document.body.appendChild(сatalog);
 
 const generateProducts = () => {
+
     mocks.forEach((item) => {
 
         const btnAdd = () => {
             cart.push(item);
             updateCart(cart);
             updateCartProduct(item);
-      
             
+            const index = cart.findIndex((product) => {
+                return product.id === item.id;
+              })
+              
+              if(index != null) {
+                cart[index].count++; 
+                
+              }
+              
+             
         } 
 
-        
-
-        const products = Product(item.name, 
+        const product = Product(item.name, 
             item.image, 
             item.sku,  
             item.oldPrice, 
             item.sale, 
             btnAdd);
             
-        сatalog.appendChild(products)
-       
+        сatalog.appendChild(product)
         
 })
 }
+
 generateProducts();
 
 

@@ -13,11 +13,12 @@ const Basket = () => {
     const h1Cart = document.createElement ('h1');
     h1Cart.innerText = 'Корзина';
 
-    
-    
+    const ContentCart = document.createElement ('div');
+    ContentCart.className = 'content';
 
     PopUpCart.appendChild(CloseCart);
     PopUpCart.appendChild(h1Cart);
+    PopUpCart.appendChild(ContentCart);
     
 
     CloseCart.addEventListener("click", function (evt) {
@@ -25,24 +26,35 @@ const Basket = () => {
         PopUpCart.classList.remove("expand");
     });
 
-   let CartProduct = [ ]
+   
+//    let CartProduct = [ ]
 
-    //const itemsArray = new Array();
 
     const updateCartProduct = (item) => {
-        CartProduct.push(item)
+    //    CartProduct.push(item);
 
         const NameCart = document.createElement ('div');
         NameCart.innerText = item.name;
-        NameCart.dataset.id = item.id
+        NameCart.dataset.id = item.id;
+        NameCart.className = 'product-name-cart';
 
-        if(CartProduct.contai)
-        PopUpCart.appendChild(NameCart);
+        const CountCart = document.createElement ('div');
+        CountCart.innerText = 'Количество: ' + item.count;
+        CountCart.className = 'product-count-cart';
 
-        
+        const PriceCart = document.createElement ('div');
+        PriceCart.innerText = 'Цена: ' + (item.oldPrice * (100-item.sale)/100) * item.count + ' руб.'
+        PriceCart.className = 'product-price-cart';
+
+        ContentCart.appendChild(NameCart);
+        ContentCart.appendChild(PriceCart);
+        ContentCart.appendChild(CountCart);
+                
    }
 
+
     return {PopUpCart, updateCartProduct}
+    
    
 }
 export default Basket
